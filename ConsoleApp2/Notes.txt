@@ -1,0 +1,362 @@
+﻿OOPS
+
+Object
+Class
+Polymorphism
+Encapsulation
+Inheritence
+
+
+Object
+- Accessing a class methods or properties by using object
+	- Static - no need to create an object
+	- Classname objectname = new classname();
+	
+Class
+- It will contain the actions, methods or properties
+
+
+Polymorphism:
+- Method overloading
+	- same method name with different parameters or different return type
+	//fields mandatory
+	public void enterformdata(string name, string age)
+
+	//with Non-mandatory fields + mandatory
+	Public void enterformData(string name, string age, string address)
+	
+	
+	public int multiplcation(int a, int b)
+	
+	public float multiplcation(float a, float b)
+	
+	
+	public successpage enterdata(string validdata, string validdata)
+	
+	public notsuccesspage enterdata(string validata, string invaliddata, string invalidorvalid)
+	
+	
+		
+- Method overridding
+	Class New
+	{
+		Public void enterdata(string A, string B)
+		{
+			entertext for A;
+			entertext for B:
+		}
+	}
+	Class Edit extends New
+	{
+		public void enterdata(string A, string B)
+		{
+			clearText A;
+			entertext for A;
+			cleartext B;
+			entertext for B;
+		}
+	}
+	
+
+SendText -> Siva > Sivanagaraju
+		-> Siva > clear > Nagaraju
+
+
+- encapsulation
+	- Page Object model -> encapsulation
+	-> Grouping properties and methods in class lo implemention > properties / variables in private > those should not be accessible directly
+		> only by public methods
+		
+	Homepage homepage;
+		
+	private By username =  By.id("Username");
+	private By password = By.id('Password");
+	
+	public void enterusername(string A)
+	{
+		username.sendtext(A);
+	}
+	public void enterpassword(string B)
+	{
+		password.sendtext(B);
+	}
+	public Homepage clicksubmit()
+	{
+		var page = null;
+		submit.click();
+		If(Error.isdisplayed)
+		{
+			Assert.Fail("Error message is displayed);			
+		}
+		else
+		{
+			Assert.equals("Homepage", Driver.gettitle());
+			page = homepage;
+		return Page;
+	}
+	
+	public Loginpage()
+	{
+		enterusername(A);
+		enterpassword(B);
+		clicksubmit();
+	}
+
+Abstraction
+- Abstract classes
+	- some methods will have implementation > abstract methods (non implemented methods)
+	Ecommerce > A or B companies > Orderaproduct
+
+	public abstract class ecommerce
+	{
+		public abstract orderaproduct
+		{
+		}
+
+		public void checktheorder()
+		{
+			click on menu;
+			go to order;
+			check the product status;
+		}
+	}
+
+	public class CompanyA : ecommerce
+	{
+		public void orderaproduct
+		{
+			Go to menu;
+			Go to category;
+			Go to product;
+			add to cart;
+			find the ordering;
+		}
+
+	}
+
+	public class CompanyB : ecoomerce
+	{
+		public void orderaproduct
+		{
+			Go to menu;
+			Go to product;
+			Buy Now;
+		}
+	}
+
+
+	public class testforCompanyA
+	{
+		public void order&checkstatus()
+		{
+			companyA A = new companyA()
+			orderaproduct;
+			checktheorder
+		}
+	}
+
+	public class testforCompanyB
+	{
+		public void order&checkstatus()
+		{
+			orderaproduct;
+			checktheorder
+		}
+	}
+
+
+- Interfaces
+	- 100% abstraction > only methods name without any implementation
+
+
+	public Interface ecommerce
+	{
+		public abstract orderaproduct
+		{
+		}
+
+		public void checktheorder()
+		{
+			
+		}
+	}
+
+	public class CompanyA : ecommerce
+	{
+		public void orderaproduct
+		{
+			Go to menu;
+			Go to category;
+			Go to product;
+			add to cart;
+			find the ordering;
+		}
+		public void checktheorder()
+		{
+			click on orderbutton;
+			check status;
+		}
+
+	}
+
+	public class CompanyB : ecoomerce
+	{
+		public void orderaproduct
+		{
+			Go to menu;
+			Go to product;
+			Buy Now;
+		}
+		public void checktheorder()
+		{
+			go to usericon;
+			Go to order;
+			check status;
+		}
+	}
+
+
+	public class testforCompanyA
+	{
+		public void order&checkstatus()
+		{
+			companyA A = new companyA()
+			orderaproduct;
+			checktheorder
+		}
+	}
+
+	public class testforCompanyB
+	{
+		public void order&checkstatus()
+		{
+			orderaproduct;
+			checktheorder
+		}
+	}
+
+	
+
+Inheritence
+- getting methods / actions from parent class
+
+E.g : Pages > submit or continue or menu options or driver
+
+Basepage >> Page1 Page2
+BasePage > common objects or objects static in all pages.
+
+
+public class BaseClass
+{
+	public webdriver driver;
+	public void initdriver()
+	{
+		driver = new chormedriver();
+	}
+}
+
+public class Loginpage : BaseClass
+{
+	public void loginpage()
+	{
+		base.driver.findelement(By.id).sendkeys();
+	}
+}
+
+
+
+Constructor
+
+public class BaseClass
+{
+	public Baseclass()
+	{
+		list<string> = get data from file;
+	}
+	public Baseclass(string filepath)
+	{
+		list<string> = get data from file;
+	}
+
+	public void initbrowser()
+	{
+	}
+
+}
+
+public class Test : BaseClass
+{
+	public void Test1()
+	{
+		initbrowser();
+	}
+}
+public class Test2 : BaseClass (filepath)
+{
+	public void Test2()
+	{
+		initbrowser();
+	}
+}
+public class Test3 
+{
+	public void Test3()
+	{
+		Baseclass bs = new Baseclass();
+		BaseClass bs1 = new BaseClass(filepath);
+	}
+}
+
+
+
+
+Xpath
+- Absolute Xpath
+	/html/body/ntp-app//div/ntp-realbox//div/input
+- Relative Xpath
+	//*[@id = 'input']
+
+
+Axes
+Acenstor
+Following
+Presecding
+Descendant
+
+									Ancestor / Parent
+
+
+				 Presceding<--------Object-------------> Following
+
+
+								decensdant / child
+
+
+$x("//*[@id='desktop-grid-4']")
+
+
+
+//*[@id="desktop-grid-i"]/descendant::h2[1]
+
+
+for(int i=0; i<grid.length();i++)
+{
+	String capturetext = driver.findelement(By.xpath('//*[@id='desktop-grid-"+i+"']/descendant::h2[1]'))
+	Console.writeline(capturetext);
+}
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
